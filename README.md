@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Frutyripe
-The mobile application Fruityripe was created to provide integrated or connected services for fruit consumers. Form of application development by utilizing deep learning to classify fruit ripeness levels based on image data. Users can use the camera to enter an image which will later identify the type of fruit and its level of ripeness.
-=======
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -68,4 +64,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
->>>>>>> master

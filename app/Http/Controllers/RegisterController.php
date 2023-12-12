@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Contract\Database;
 use Illuminate\Support\Facades\Hash;
 
-
 class RegisterController extends Controller
 {
     protected $database;
@@ -38,8 +37,10 @@ class RegisterController extends Controller
         }
 
         $postData = [
-            'password' => $request->input('password'), //=>kalo misal ga mau di enkripsi
-            //'password' => Hash::make($request->input('password')), // Menggunakan bcrypt untuk mengenkripsi password
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')), // Menggunakan bcrypt untuk mengenkripsi password
         ];
 
         // Set the username as the key in the database

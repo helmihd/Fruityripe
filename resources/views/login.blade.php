@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.login')
 
-        <title>Laravel</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    </head>
-    <body>
-        <h4>Halo</h4>
-        @if(session('status'))
-            <span class="alert alert-warning mb-2">{{ session('status') }}</span>
-        @endif
-
-        <form action="{{ url('login') }}" method="POST">
+@section('content')
+<section class="main">
+    <div class="login-container">
+        <img class="logo" src="{{ asset('images/fruityripe-logo.png') }}" alt="">
+        <p class="title">Sign in to your account</p>
+        <form class="login-form" action="{{ url('login') }}" method="POST">
             @csrf
-            <div class="input-group mb-3">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" aria-describedby="basic-addon1">
-            </div>  
-            <div class="input-group mb-3">
-                <label>Password</label>
-                <input type="text" name="password" class="form-control" aria-describedby="basic-addon1">
-            </div>             
-            <div class="form-group mb-3">
-                <button type="submit" class="btn btn-primary">Login</button>
+            <div class="form-control">
+                <input type="text" placeholder="Username or email" name="username" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" placeholder="Password" name="password" required>
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="remember-forgot">
+                <label for=""><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button class="submit">Sign in</button>
+            <div class="separate">
+                <hr>
+                <span>Or sign in with</span>
+                <hr>
+            </div>
+            <button class="login-google"><img src="{{ asset('images/google-icon.png') }}" alt=""></button>
+            <div class="new-user">
+                <p>New user? <a href="{{ route('register') }}">Register</a></p>
             </div>
         </form>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+    </div>
+</section>
+@endsection

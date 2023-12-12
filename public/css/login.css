@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.20);
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    display: flex;
+    /* display: grid;
+    grid-template-columns: ; */
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.main{
+    width: 500px; 
+    height: 570px; 
+    background: #2A4BA0; 
+    border-radius: 20px
+}
+
+.login-container{
+    width: 500px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 45px;
+    height: auto;
+    margin: 10px;
+}
+
+.title{
+    width: 100%;
+    color: #F8F9FB; 
+    font-size: 22px; 
+    font-family: Manrope; 
+    font-weight: 580;
+    letter-spacing: 1px; 
+    word-wrap: break-word;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control{
+    width: 100%;
+    position: relative;
+    margin-bottom: 18px;
+}
+
+button{
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 18px;
+    border: none;
+    background: #2A4BA0;
+    border-radius: 10px;
+    border: 3px white solid;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 38px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #C51605, #FD8D14 );
+    cursor: pointer;
+    transition: opacity 0.4s;
+}
+
+button.submit:hover{
+    opacity: 0.7;
+}
+
+input{
+    width: 100%;
+    border: none;
+    background: #E7ECF0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 550;
+    line-height: 38px;
+    color: rgba(0, 0, 0, 0.60);
+    padding: 2px 30px 2px 30px;
+}
+
+input ~ i{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.60);
+    transition: color 0.4s;
+}
+
+input:focus ~ i{
+    color:  #2A4BA0;
+}
+
+.remember-forgot{
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label{
+    font-size: 14px;
+    color: #E7ECF0;
+    font-weight: 550;
+    line-height: 38px;
+}
+
+.remember-forgot a{
+    font-size: 14px;
+    color: #FFC83A;
+    font-weight: 550;
+    line-height: 38px; 
+}
+.remember-forgot label input{
+    width: 24px;
+    height: auto;
+    accent-color: #E7ECF0;
+    background: #2A4BA0;
+    background-color: #2A4BA0;
+    border-radius: 3px;
+    border: 2px;
+}
+
+.separate{
+    display: flex;
+    align-items: center;
+}
+
+.separate hr{
+    flex: 1; /* Membuat garis memenuhi sisa ruang */
+    border: none;
+    height: 1px; /* Ketebalan garis */
+    background-color: #E7ECF0; /* Warna garis (hitam dalam contoh) */
+    margin: 0 10px; /* Jarak antara garis dan teks */
+}
+
+.separate span{
+    font-size: 14px;
+    color: #E7ECF0;
+    font-weight: 550;
+    line-height: 38px;
+}
+
+button.login-google{
+    width: 100%;
+    border: none;
+    background: #E7ECF0;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.login-google img{
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px 5px 0px;
+}
+
+.new-user{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.new-user p{
+    font-size: 14px;
+    color: #E7ECF0;
+    font-weight: 550;
+    line-height: 38px;
+}
+
+.new-user p a{
+    font-size: 14px;
+    color: #FFC83A;
+    font-weight: 550;
+    line-height: 38px; 
+}
+
+/* Responsiveness */
+@media (max-width: 780px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width:500px) {
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section.main{
+        width: 300px; 
+        height: 570px; 
+        background: #2A4BA0; 
+        border-radius: 20px
+    }
+}

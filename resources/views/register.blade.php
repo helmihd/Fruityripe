@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.register')
 
-        <title>Laravel</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-    </head>
-    <body>
-        <h4>Register</h4>
-
-        @if(session('error'))
-            <div class="alert alert-danger mb-3">
-                {{ session('error') }}
-            </div>
-        @endif
-
-        <form action="{{ url('register') }}" method="POST">
+@section('content')
+<section class="main">
+    <div class="login-container">
+        <img class="logo" src="{{ asset('images/fruityripe-logo.png') }}" alt="">
+        <p class="title">Register account</p>
+        <form class="login-form" action="{{ url('register') }}" method="POST">
             @csrf
-            <div class="input-group mb-3">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" aria-describedby="basic-addon1">
-            </div>  
-            <div class="input-group mb-3">
-                <label>Password</label>
-                <input type="text" name="password" class="form-control" aria-describedby="basic-addon1">
-            </div>             
-            <div class="form-group mb-3">
-                <button type="submit" class="btn btn-primary">Save</button>
+            <div class="form-control">
+                <input type="text" name="firstname" placeholder="Firstname" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" name="lastname" placeholder="Lastname" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" name="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" name="password" placeholder="Password" id="password" required>
+                <i class="fas fa-eye" id="show-password"></i>
+            </div>
+            <div class="form-control">
+                <input type="text" placeholder="Confirm Password" id="confirm-password" required>
+                <i class="fas fa-eye" id="show-confirm-password"></i>
+            </div>
+            <button class="submit">Register</button>
+            <div class="back-login">
+                <a href="#"><span>Already have an account? Login</span></a>
             </div>
         </form>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
-</html>
+    </div>
+</section>
+@endsection
