@@ -33,7 +33,7 @@
             </div>
             <button class="submit">Register</button>
             <div class="back-login">
-                <a href="#"><span>Already have an account? Login</span></a>
+                <a href="{{ route('login') }}"><span>Already have an account? Login</span></a>
             </div>
         </form>
     </div>

@@ -45,7 +45,7 @@ class LoginController extends Controller
             $request->session()->put('username', $username);
 
             // Pengguna berhasil login
-            return redirect('/dashboard');
+           return redirect()->route('dashboard');
         } else {
             // Gagal login
             return redirect('login')->with('status', 'Login gagal. Periksa kembali username dan password.');

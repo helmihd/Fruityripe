@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Monolog\Handler\RotatingFileHandler;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ use App\Http\Controllers\LoginController;
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::get('register/create', [RegisterController::class, 'create']);
-Route::post('register', [RegisterController::class, 'store']);
+Route::post('register/store', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
@@ -29,11 +29,9 @@ Route::get('/', function () {
     return view('register');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 
-
-Route::get('login', function() {
-    return view('login');
+Route::middleware(['web'])->group(function () {
+    Route::post('/upload/image', [ImageController::class, 'imageUpload'])->name('upload.image');
+    // Tambahkan rute-rute lain yang perlu otentikasi di sini
 });
