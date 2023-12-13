@@ -54,32 +54,43 @@ class LoginController extends Controller
 
     private function authenticateUser($usernameOrEmail, $password)
     {
-        // Dapatkan referensi ke tabel pengguna di Firebase
+        // Get reference to the users table in Firebase
         $userRef = $this->database->getReference('users');
 
-        // Ambil data pengguna berdasarkan username
-        // Periksa apakah input username adalah alamat email
+        // Check if the input is a valid email address
         if (filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL)) {
-            // Jika ya, cari pengguna berdasarkan email
+            // If it's an email, find the user by email
             $userData = $this->findUserByEmail($userRef, $usernameOrEmail);
         } else {
-            // Jika tidak, cari pengguna berdasarkan username
-            $userData = $userRef->getChild($usernameOrEmail)->getValue();
+            // If it's not an email, find the user by username
+            $userData = $this->findUserByUsername($userRef, $usernameOrEmail);
         }
-        //$userData = $userRef->getChild($username)->getValue();
 
-        // Debugging untuk melihat tipe data dan nilainya
+        // Debugging to see the data type and value
         if (is_array($userData) && isset($userData['password'])) {
-            // Data pengguna ditemukan, cek password
+            // User data found, check the password
             $storedPassword = $userData['password'];
 
-            // Verifikasi password dengan menggunakan Hash::check
+            // Verify the password using Hash::check
             if (Hash::check($password, $storedPassword)) {
                 return $userData;
             }
         }
 
         return null;
+    }
+
+    private function findUserByUsername($userRef, $username)
+    {
+        // Get user data based on the provided username
+        $userData = $userRef->getChild($username)->getValue();
+
+        // If user data is found, add the 'username' key to the array
+        if ($userData) {
+            $userData['username'] = $username;
+        }
+
+        return $userData;
     }
 
     private function findUserByEmail($userRef, $email)

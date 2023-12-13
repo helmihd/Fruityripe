@@ -19,7 +19,7 @@ use App\Http\Controllers\ImageController;
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::get('register/create', [RegisterController::class, 'create']);
-Route::post('register/store', [RegisterController::class, 'store']);
+Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

@@ -24,16 +24,16 @@
                 <i class="fas fa-user"></i>
             </div>
             <div class="form-control">
-                <input type="text" name="password" placeholder="Password" id="password" required>
-                <i class="fas fa-eye" id="show-password"></i>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <i class="fa-solid fa-lock" id="show-password"></i>
             </div>
             <div class="form-control">
-                <input type="text" placeholder="Confirm Password" id="confirm-password" required>
-                <i class="fas fa-eye" id="show-confirm-password"></i>
+                <input type="password" placeholder="Confirm Password" id="confirm-password" required>
+                <i class="fa-solid fa-lock" id="show-confirm-password"></i>
             </div>
             <button class="submit">Register</button>
             <div class="back-login">
-                <a href="{{ route('login') }}"><span>Already have an account? Login</span></a>
+                <p>Already have an account? <a href="{{ route('login') }}">Login</a></p>
             </div>
         </form>
     </div>
