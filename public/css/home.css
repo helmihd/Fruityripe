@@ -88,6 +88,127 @@ nav i{
     color: #F8F9FB;
 }
 
+.wrapper{
+    margin: 50px auto;
+    background: #2A4BA0;
+    width: 450px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.wrapper header{
+    color: #F8F9FB;
+    font-size: 20px;
+    text-align: center;
+}
+
+.wrapper form{
+    height: 167px;
+    width: 100%;
+    display: flex;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #F8F9FB;
+    cursor: pointer;
+}
+
+form :where(i, p){
+    color: #F8F9FB;
+}
+form i{
+    font-size: 40px;
+}
+
+form p{
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+section .row{
+    background: #153075;
+    margin-bottom: 10px;
+    width: 415px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #F8F9FB;
+}
+
+section .row i{
+    font-size: 24px;
+    color: #E2A300;
+}
+
+section .details span{
+    font-size: 14px;
+}
+
+.progress-area .row .content{
+    width: 100%;
+    margin-left: 15px;
+}
+
+.progress-area .details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.uploaded-area .row .content{
+    display: flex;
+    align-items: center;
+}
+
+.uploaded-area .row .details{
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+
+.progress-area .progress-bar{
+    height: 6px;
+    width: 100%;
+    background: #2A4BA0;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    border-radius: 30px;
+}
+
+.progress-bar .progress{
+    height: 100%;
+    width: 0%;
+    background: #E2A300;
+    border-radius: inherit;
+}
+
+.uploaded-area{
+    max-height: 150px;
+    overflow-y: scroll;
+}
+
+.uploaded-area::-webkit-scrollbar{
+    width: 0px;
+}
+
+.uploaded-area .details .size{
+    font-size: 10px;
+}
+
+.uploaded-area .fa-check{
+    color: #E2A300;
+    font-size: 20px;
+}
+
 .big-title{
     font-size: 40px;
     font-family: Manrope;
@@ -377,6 +498,44 @@ nav i{
         left: 0;
     }
 
+    .wrapper{
+        margin: 50px auto;
+        background: #2A4BA0;
+        width: 350px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .wrapper form{
+        height: 167px;
+        width: 100%;
+        display: flex;
+        margin: 30px 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 5px;
+        border: 2px dashed #F8F9FB;
+        cursor: pointer;
+    }
+
+    section .row{
+        background: #153075;
+        margin-bottom: 10px;
+        width: 315px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #F8F9FB;
+    }
+
     .big-title{
         font-size: 35px;
         font-family: Manrope;
@@ -398,21 +557,6 @@ nav i{
     
 }
 
-@media(max-width: 500px){
-    .logo-title{
-        font-family: 'Bebas Neue', sans-serif;
-        font-weight: bold;
-        font-size: 30px;
-        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
-        align-items: center;
-        position: absolute;
-        left: 38%;
-    }
-}
-
 @media(max-width: 600px){
     .logo-title{
         font-family: 'Bebas Neue', sans-serif;
@@ -427,3 +571,57 @@ nav i{
         left: 35%;
     }
 }
+
+@media(max-width: 500px){
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 38%;
+    }
+
+    .wrapper{
+        margin: 50px auto;
+        background: #2A4BA0;
+        width: 300px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+    .wrapper form{
+        height: 167px;
+        width: 100%;
+        display: flex;
+        margin: 30px 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 5px;
+        border: 2px dashed #F8F9FB;
+        cursor: pointer;
+    }
+
+    section .row{
+        background: #153075;
+        margin-bottom: 10px;
+        width: 265px;
+        padding: 15px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #F8F9FB;
+    }
+}
+

@@ -6,6 +6,20 @@
 @endsection
 
 @section('content')
+    <div class="wrapper">
+        <header>Upload your file here!</header>
+        <form action="#">
+            <input type="file" class="file-input" name="file" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Browse File to Upload</p>
+        </form>
+        <section class="progress-area">
+            
+        </section>
+        <section class="uploaded-area">
+            
+        </section>
+    </div>
     <div class="big-title">
         <p>Check Your Fruit</p>
     </div>
