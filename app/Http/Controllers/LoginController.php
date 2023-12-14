@@ -113,6 +113,6 @@ class LoginController extends Controller
         Session::forget('username');
 
         // Redirect ke halaman login atau halaman lain yang sesuai
-        return redirect('/login');
+        return redirect('/dashboard');
     }
 }
