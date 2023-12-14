@@ -4,31 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
 
 class ImageController extends Controller
 {
-    public function imageUpload(Request $request)
+    public function uploadImage(Request $request)
     {
-        try {
-            $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
+        $serviceAccountPath = base_path('frutyripe-firebase-adminsdk-ww9bg-272a6d9f89.json');
 
-            $image = $request->file('image');
-            $imageName = time() . '.' . $image->getClientOriginalExtension();
-            $path = 'Images/' . $imageName;
+        // Mendapatkan data dari formulir
+        $file = $request->file('fileInput');
+        $username = $request->session()->get('username');
+        $timestamp = now()->timestamp;
 
-            // Simpan gambar ke Google Cloud Storage
-            Storage::disk('gcs')->put($path, fopen($image, 'r+'));
+        // Generate key: username_timestamp
+        $key = $username . '_' . $timestamp;
 
-            // Anda juga dapat mengembalikan URL gambar jika diperlukan
-            $imageUrl = Storage::url($path);
+        // Upload gambar ke Firebase Storage
+        $factory = (new Factory)->withServiceAccount($serviceAccountPath);
+        $storage = $factory->createStorage();
+        $bucket = $storage->getBucket();
+        
+        $object = $bucket->upload(
+            file_get_contents($file->path()),
+            [
+                'name' => 'pictures/' .  $username . '/' . $key,
+            ]
+        );
 
-            // Kembalikan respons dengan status 200 dan pesan sukses
-            return redirect('/dashboard')->with('status', 'Image uploaded successfully')->with('url', $imageUrl);
-        } catch (\Exception $e) {
-            // Kembalikan respons dengan status 500 dan pesan error
-            return redirect('/dashboard')->with('status', 'Failed to upload image. Error: ' . $e->getMessage())->with('url', null);
-        }
+        // Simpan data ke tabel pictures di Firebase Database
+        $databaseUrl = 'https://frutyripe-default-rtdb.firebaseio.com';
+        $database = $factory->withDatabaseUri($databaseUrl)->createDatabase();
+
+        $reference = $database->getReference('pictures/' . $key);
+
+        $reference->set([
+            'username' => $username,
+            'timestamp' => $timestamp,
+        ]);
+
+        return redirect('/dashboard')->with('status', 'Image uploaded successfully');
     }
 }

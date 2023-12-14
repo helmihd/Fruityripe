@@ -4,7 +4,10 @@ const bucketName = 'frutyripe.appspot.com';
 // Ganti dengan API key Anda (pastikan untuk melindungi API key di produksi)
 const apiKey = 'AIzaSyDSAGAWLe2PHN5csfrqNyYGmaMm6AzfCuE';
 
-// Fungsi untuk mengunggah gambar dengan nama unik
+// Ganti dengan nama folder yang diinginkan
+const folderName = 'images';
+
+// Fungsi untuk mengunggah gambar dengan nama unik ke dalam folder 'images'
 function uploadImage() {
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
@@ -15,9 +18,9 @@ function uploadImage() {
 
         // Generate a unique identifier (e.g., timestamp)
         const timestamp = Date.now();
-        
+
         // Append the unique identifier and username to the original file name
-        const uniqueFileName = `${username}_${timestamp}`;
+        const uniqueFileName = `${folderName}/${username}_${timestamp}`;
 
         const formData = new FormData();
         formData.append('file', file, uniqueFileName);

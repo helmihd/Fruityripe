@@ -31,7 +31,6 @@ Route::get('/', function () {
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
 
-Route::middleware(['web'])->group(function () {
-    Route::post('/upload/image', [ImageController::class, 'imageUpload'])->name('upload.image');
-    // Tambahkan rute-rute lain yang perlu otentikasi di sini
-});
+
+Route::post('/upload-image', [ImageController::class, 'uploadImage']);
+

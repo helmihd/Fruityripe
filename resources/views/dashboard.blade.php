@@ -59,13 +59,19 @@
         </div>
     </div>
 
-    <form id="uploadForm">
-        <label for="fileInput">Pilih Gambar:</label>
-        <input type="file" id="fileInput" accept="image/*">
-        <button type="button" onclick="uploadImage()">Unggah Gambar</button>
+    @if(session('status'))
+        <p>{{ session('status') }}</p>
+    @endif
+
+    <form id="uploadForm" action="{{ url('/upload-image') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <label for="fileInput">Choose Image:</label>
+        <input type="file" name="fileInput" id="fileInput" accept="image/*">
+        <button type="submit">Upload Image</button>
         <div id="username" data-username="{{ session('username') }}" style="display: none;"></div>
     </form>
-    
+
+    <button type="button" onclick="uploadImage()">Unggah Gambar</button>
     <ul id="imageList"></ul>
 @endsection
 
