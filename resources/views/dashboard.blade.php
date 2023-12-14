@@ -1,4 +1,9 @@
-@extends('layouts.home')
+@extends('layouts.main')
+
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <title>Dashboard</title>
+@endsection
 
 @section('content')
     <div class="big-title">
@@ -62,6 +67,17 @@
     </form>
     
     <ul id="imageList"></ul>
-    <script src="{{ asset('js/uploadImage.js') }}"></script>
+@endsection
 
+@section('script')
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#icon-menu').click(function(){
+                $('ul').toggleClass('show');
+            });
+        });
+    </script>
+    <script src="{{ asset('js/uploadImage.js') }}"></script>
 @endsection

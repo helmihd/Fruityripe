@@ -1,4 +1,9 @@
-@extends('layouts.register')
+@extends('layouts.auth')
+
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <title>Sign up to FruityRipe</title>
+@endsection
 
 @section('content')
     <section class="main">
@@ -38,4 +43,7 @@
             </form>
         </div>
     </section>
+@endsection
+
+@section('script')
 @endsection

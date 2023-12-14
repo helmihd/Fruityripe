@@ -6,7 +6,6 @@
     <ul>
         <li><a href="#">About</a></li>
         <li><a href="#">History</a></li>
-        <!-- Place this code where you want to display the Logout/Login link -->
         @if(session('username'))
             <li><a href="{{ route('logout') }}">Logout</a></li>
             <li><i class="fa-solid fa-user-check"></i></li>

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.auth')
 
 @section('head')
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
