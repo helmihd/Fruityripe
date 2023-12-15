@@ -50,7 +50,7 @@ class RegisterController extends Controller
             ->set($postData);
 
         // Redirect to 'login' after successfully adding data
-        return redirect('login')->with('status', 'Silahkan login');
+        return redirect('login')->with('status', 'Register succes. Please login!');
     }
 
     private function isUsernameUnique($username)

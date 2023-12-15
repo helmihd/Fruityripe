@@ -48,7 +48,7 @@ class LoginController extends Controller
            return redirect()->route('dashboard');
         } else {
             // Gagal login
-            return redirect('login')->with('status', 'Login gagal. Periksa kembali username dan password.');
+            return redirect('login')->with('error', 'Username or Password incorrect!');
         }
     }
 
