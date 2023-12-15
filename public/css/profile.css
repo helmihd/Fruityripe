@@ -176,9 +176,8 @@ nav i{
 /* -------ini style buat button save dan cancel-------- */
 .wrapper .right .info .info-data #profile-form .button-save-cancel{
     display: flex;
-    position: absolute;
-    bottom: 5px;
-    right: 0;
+    justify-content: right;
+    margin-bottom: 10px;
 }
 
 #saveButton, #cancelButton {
