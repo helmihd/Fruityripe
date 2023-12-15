@@ -11,39 +11,38 @@ class ImageController extends Controller
 {
     public function uploadImage(Request $request)
     {
-        $serviceAccountPath = base_path('frutyripe-firebase-adminsdk-ww9bg-272a6d9f89.json');
+        try {
+            $serviceAccountPath = base_path('frutyripe-firebase-adminsdk-ww9bg-272a6d9f89.json');
 
-        // Mendapatkan data dari formulir
-        $file = $request->file('fileInput');
-        $username = $request->session()->get('username');
-        $timestamp = now()->timestamp;
+            $file = $request->file('fileInput');
+            $username = $request->session()->get('username');
+            $timestamp = now()->timestamp;
 
-        // Generate key: username_timestamp
-        $key = $username . '_' . $timestamp;
+            $key = $username . '_' . $timestamp;
 
-        // Upload gambar ke Firebase Storage
-        $factory = (new Factory)->withServiceAccount($serviceAccountPath);
-        $storage = $factory->createStorage();
-        $bucket = $storage->getBucket();
-        
-        $object = $bucket->upload(
-            file_get_contents($file->path()),
-            [
-                'name' => 'pictures/' .  $username . '/' . $key,
-            ]
-        );
+            $factory = (new Factory)->withServiceAccount($serviceAccountPath);
+            $storage = $factory->createStorage();
+            $bucket = $storage->getBucket();
 
-        // Simpan data ke tabel pictures di Firebase Database
-        $databaseUrl = 'https://frutyripe-default-rtdb.firebaseio.com';
-        $database = $factory->withDatabaseUri($databaseUrl)->createDatabase();
+            $object = $bucket->upload(
+                file_get_contents($file->path()),
+                [
+                    'name' => 'pictures/' .  $username . '/' . $key,
+                ]
+            );
 
-        $reference = $database->getReference('pictures/' . $key);
+            $databaseUrl = 'https://frutyripe-default-rtdb.firebaseio.com';
+            $database = $factory->withDatabaseUri($databaseUrl)->createDatabase();
 
-        $reference->set([
-            'username' => $username,
-            'timestamp' => $timestamp,
-        ]);
+            $reference = $database->getReference('pictures/' . $key);
 
-        return redirect('/dashboard')->with('status', 'Image uploaded successfully');
+            $reference->set([
+                'username' => $username,
+                'timestamp' => $timestamp,
+            ]);
+            return redirect('/dashboard')->with('status', 'Image uploaded successfully');
+        } catch (\Exception $e) {
+            return redirect('/dashboard')->with('status', 'Failed to upload image')->with('status_type', 'error');
+        }
     }
 }

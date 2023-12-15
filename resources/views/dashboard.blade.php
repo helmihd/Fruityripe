@@ -6,20 +6,6 @@
 @endsection
 
 @section('content')
-    <div class="wrapper">
-        <header>Upload your file here!</header>
-        <form action="#">
-            <input type="file" class="file-input" name="file" hidden>
-            <i class="fas fa-cloud-upload-alt"></i>
-            <p>Browse File to Upload</p>
-        </form>
-        <section class="progress-area">
-            
-        </section>
-        <section class="uploaded-area">
-            
-        </section>
-    </div>
     <div class="big-title">
         <p>Check Your Fruit</p>
     </div>
@@ -72,19 +58,23 @@
             <p>Watermelon</p>
         </div>
     </div>
-
+    
     @if(session('status'))
         <p>{{ session('status') }}</p>
     @endif
 
-    <form id="uploadForm" action="{{ url('/upload-image') }}" method="post" enctype="multipart/form-data">
-        @csrf
-        <label for="fileInput">Choose Image:</label>
-        <input type="file" name="fileInput" id="fileInput" accept="image/*">
-        <button type="submit">Upload Image</button>
-        <div id="username" data-username="{{ session('username') }}" style="display: none;"></div>
-    </form>
-
+    <div class="wrapper">
+        <header>Upload your file here!</header>
+        <form action="{{ url('/upload-image') }}" id="uploadForm" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" class="file-input" name="fileInput" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Browse File to Upload</p>
+        </form>
+        <section class="progress-area"></section>
+        <section class="uploaded-area"></section>
+        <button type="button" id="externalButton">External Button</button>
+    </div>
     <button type="button" onclick="uploadImage()">Unggah Gambar</button>
     <ul id="imageList"></ul>
 @endsection
@@ -100,4 +90,5 @@
         });
     </script>
     <script src="{{ asset('js/uploadImage.js') }}"></script>
+    <script src="{{ asset('js/landingPage.js') }}"></script>
 @endsection

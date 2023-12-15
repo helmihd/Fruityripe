@@ -1,4 +1,4 @@
-const form = document.querySelector("form"),
+const form = document.querySelector("#uploadForm"),
   fileInput = form.querySelector(".file-input"),
   progressArea = document.querySelector(".progress-area"),
   uploadedArea = document.querySelector(".uploaded-area");
@@ -67,4 +67,8 @@ function uploadFile(name, file) {
   let formData = new FormData();
   formData.append("file", file);
   xhr.send(formData);
-}
+};
+
+document.getElementById('externalButton').addEventListener('click', function() {
+  form.submit();
+});
