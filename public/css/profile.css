@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+    background: #2A4BA0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 75px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.logo img{
+    width: 55px;
+    height: auto;
+}
+
+.logo-title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 45%;
+    
+}
+
+nav ul{
+    margin-right: 30px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav a{
+    color: #F8F9FB;
+    font-size: 16px;
+    font-weight: 580;
+    letter-spacing: 1px;
+    border: 1.5px solid transparent;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+nav ul li i{
+    cursor: pointer;
+}
+
+a.active,a:hover{
+    border: 1.5px solid #F8F9FB;
+    transition: 0.5s;
+}
+
+nav #icon-menu{
+    display: none;
+}
+nav label i{
+    margin-right: 30px;
+    color: #F8F9FB;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+nav i{
+    color: #F8F9FB;
+}
+
+/* ---------nav bar end------------ */
+
+.wrapper{
+    margin-top: 100px;
+    margin: 100px auto;
+    justify-content: center;
+    width: 500px;
+    display: flex;
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    background: #F8F9FB;
+}
+
+.wrapper .left{
+    width: 35%;
+    background: linear-gradient(to right, #2A4BA0, #153075);
+    padding: 30px 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.wrapper .left img {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100px; /* Pastikan lebar 100% agar objek-fit berfungsi dengan baik */
+    height: 100px; /* Pastikan tinggi 100% agar objek-fit berfungsi dengan baik */
+    cursor: pointer;
+}
+
+
+.wrapper .left h4{
+    color: #FFC83A;
+    margin-bottom: 10px;
+}
+
+.wrapper .left p{
+    font-size: 12px;
+    color: #FFC83A;
+    text-align: center;
+}
+
+.wrapper .right{
+    width: 65%;
+    background: #F8F9FB;
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 30px 25px;
+}
+
+.wrapper .right .info h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(42, 75, 160, 0.4);
+    text-transform: uppercase;
+    color: #153075;
+}
+
+/* ----------ini style pas user klik edit------------- */
+.wrapper .right .info .info-data #profile-form .data h4 {
+    color: #153075;
+    margin-bottom: 2px;
+}
+
+
+.wrapper .right .info .info-data #profile-form .data input{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: rgba(21, 48, 117, 0.7);
+    padding: 5px 10px;
+    border: 1.5px solid #153075;
+    border-radius: 5px;
+}
+/* ----------ini style pas user klik edit------------- */
+
+/* -------ini style buat button save dan cancel-------- */
+.wrapper .right .info .info-data #profile-form .button-save-cancel{
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
+#saveButton, #cancelButton {
+    margin-right: 10px; /* Sesuaikan margin sesuai kebutuhan Anda */
+    padding: 5px 8px;
+    background-color: #2A4BA0;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* -------ini style buat button save dan cancel-------- */
+
+
+/* --------ini style buat yang display data nya-------- */
+.wrapper .right .info .data h4{ 
+    color: #153075;
+    margin-bottom: 2px;
+}
+
+.wrapper .right .info .data p{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: rgba(21, 48, 117, 0.7);
+}
+/* --------ini style buat yang display data nya-------- */
+
+.edit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2A4BA0;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button i{
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.edit-button:hover {
+    background-color: #153075;
+}
+
+/* --------responsive----------- */
+@media (max-width: 1048px){
+    .logo{
+        width: 75px;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    nav ul{
+        margin-right: 20px;
+    }
+
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 45%;
+    }
+}
+
+
+@media (max-width: 840px){
+    body{
+        z-index: 1;
+    }
+
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+    }
+    
+    nav #icon-menu{
+        display: block;
+    }
+
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #153075;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: .5s;
+        z-index: 4;
+    }
+
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    
+    a.active,a:hover{
+        border: none;
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    i.active,i:hover{
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    nav ul.show{
+        left: 0;
+    }
+    
+}
+
+@media(max-width: 600px){
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 35%;
+    }
+
+    .wrapper{
+        margin-top: 100px;
+        margin: 100px auto;
+        justify-content: center;
+        width: 400px;
+        display: flex;
+        box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        background: #F8F9FB;
+    }
+}
+
+@media(max-width: 500px){
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 38%;
+    }
+
+    .wrapper{
+        margin-top: 100px;
+        margin: 100px auto;
+        justify-content: center;
+        width: 350px;
+        display: flex;
+        box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+        background: #F8F9FB;
+    }
+}
+
