@@ -22,7 +22,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="{{ asset('images/adeline.png') }}" alt="">
+            <img src="{{ asset('images/fruitytipe-logo.png') }}" alt="">
         </div>
         <label class="logo-title">FruityRipe</label>
         <ul>
@@ -39,7 +39,7 @@
         <div class="left">
             <input type="file" id="profileImageInput" style="display: none;">
             <label for="profileImageInput">
-                <img src="./assets/images/adeline.png" alt="" id="profileImage" width="100">
+                <img src="{{ asset('images/adeline.png') }}" alt="" id="profileImage" width="100">
             </label>
             <h4 id="username">adelinefellita</h4>
             <p>Intermediate</p>
