@@ -22,7 +22,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="./assets/images/fruityripe-logo.png" alt="">
+            <img src="{{ asset('images/adeline.png') }}" alt="">
         </div>
         <label class="logo-title">FruityRipe</label>
         <ul>
