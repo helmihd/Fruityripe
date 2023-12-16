@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+    background: #2A4BA0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 75px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.logo img{
+    width: 55px;
+    height: auto;
+}
+
+.logo-title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 45%;
+    
+}
+
+nav ul{
+    margin-right: 30px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav a{
+    color: #F8F9FB;
+    font-size: 16px;
+    font-weight: 580;
+    letter-spacing: 1px;
+    border: 1.5px solid transparent;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+nav ul li i{
+    cursor: pointer;
+}
+
+a.active,a:hover{
+    border: 1.5px solid #F8F9FB;
+    transition: 0.5s;
+}
+
+nav #icon-menu{
+    display: none;
+}
+nav label i{
+    margin-right: 30px;
+    color: #F8F9FB;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+nav i{
+    color: #F8F9FB;
+}
+/* ---------nav bar end------------ */
+
+/* ------style main content-------- */
+.fruit-name{
+    margin-top: 20px;
+}
+
+.fruit-name p{
+    font-size: 30px;
+    font-family: Manrope;
+    font-weight: 700;
+    line-height: 62.55px;
+    color: #2A4BA0;
+    text-align: center;
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.wrapper img{
+    width: 250px;
+    margin-right: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .card-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .card-result .date{
+
+}
+
+.wrapper .card-result .date p{
+    margin: 5px auto;
+    color: #2A4BA0;
+    font-size: 14px;
+    font-family: Manrope;
+    font-weight: 500;
+}
+
+.wrapper .card-result p{
+    margin: 5px auto;
+    color: #2A4BA0;
+    font-size: 16px;
+    font-family: Manrope;
+    font-weight: 700;
+}
+
+.wrapper .card-result .fruit-status{
+    width: 100%;
+}
+
+.wrapper .card-result .fruit-status p{
+    color: #FAFBFD;
+    width: 100%;
+    max-width: 300px;
+    font-size: 22px;
+    font-family: Manrope;
+    font-weight: 800;
+    background: #FFC83A; 
+    border-radius: 50px;
+    text-align: center;
+    padding: 12px;
+}
+/* -------------------------------- */
+
+/* ----------responsive------------ */
+@media (max-width: 1048px){
+    .logo{
+        width: 75px;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    nav ul{
+        margin-right: 20px;
+    }
+
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 45%;
+    }
+}
+
+
+@media (max-width: 840px){
+    body{
+        z-index: 1;
+    }
+
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+    }
+    
+    nav #icon-menu{
+        display: block;
+    }
+
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #153075;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: .5s;
+        z-index: 4;
+    }
+
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    
+    a.active,a:hover{
+        border: none;
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    i.active,i:hover{
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    nav ul.show{
+        left: 0;
+    }
+    
+}
+
+@media(max-width: 650px){
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 35%;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 20px auto;
+        justify-content: center;
+    }
+
+    .wrapper img{
+        width: 250px;
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 500px){
+    .logo-title{
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
+        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
+        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 38%;
+    }
+
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: 20px auto;
+        justify-content: center;
+    }
+
+    .wrapper img{
+        width: 250px;
+        border-radius: 20px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
