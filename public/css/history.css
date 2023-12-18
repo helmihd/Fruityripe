@@ -1,0 +1,478 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+nav{
+    height: 80px;
+    width: 100%;
+    background: #2A4BA0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 75px;
+    height: auto;
+    margin-left: 30px;
+}
+
+.logo img{
+    width: 55px;
+    height: auto;
+}
+
+.logo-title{
+    font-family: 'Expletus Sans', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    /* background: w;
+    -webkit-background-clip: text; Menerapkan background hanya pada teks */
+    color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+    /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
+    align-items: center;
+    position: absolute;
+    left: 45%;
+    letter-spacing: 1.5px;
+    
+}
+
+.logo-title span{
+    color: #F9B023;
+    font-weight: bold;
+    font-family: 'Expletus Sans', sans-serif;
+}
+
+nav ul{
+    margin-right: 30px;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+nav a{
+    color: #F8F9FB;
+    font-size: 16px;
+    font-weight: 580;
+    letter-spacing: 1px;
+    border: 1.5px solid transparent;
+    padding: 3px 7px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+nav ul li i{
+    cursor: pointer;
+}
+
+a.active,a:hover{
+    border: 1.5px solid #F8F9FB;
+    transition: 0.5s;
+}
+
+nav #icon-menu{
+    display: none;
+}
+nav label i{
+    margin-right: 30px;
+    color: #F8F9FB;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    display: none;
+}
+
+nav i{
+    color: #F8F9FB;
+}
+/* ---------nav bar end------------ */
+
+/* ------style main content-------- */
+.main-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main-title p{
+    font-size: 30px;
+    font-family: Manrope;
+    font-weight: 700;
+    line-height: 62.55px;
+    color: #2A4BA0;
+    text-align: center;
+}
+
+/* -------style untuk filter------- */
+.filter{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.category{
+    width: 180px;
+    /* margin: 150px auto; */
+    margin-right: 20px;
+    white-space: normal;
+}
+
+.category p{
+    color: #2A4BA0;
+    font-size: 17px;
+    font-weight: 550;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+.date{
+    display: flex;
+    white-space: normal;
+}
+
+.to-date{
+    margin-left: 20px;
+}
+
+.category .category-btn{
+    display: flex;
+    height: 49px;
+    background: #F8F9FB;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 550;
+    border-radius: 20px;
+    border: 2px solid #2A4BA0;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    flex-grow: 1;
+    
+}
+
+/* .category-text{
+    color: rgba(0, 0, 0, 0.5);
+} */
+
+.category .category-btn i{
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.category.active .category-btn i{
+    transform: rotate(-180deg);
+}
+
+.category .options{
+    position: relative;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background: #F8F9FB;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.category.active .options{
+    display: block;
+}
+
+.options .option{
+    display: flex;
+    height: 45px;
+    cursor: pointer;
+    padding: 0 15px;
+    border-radius: 10px;
+    align-items: center;
+    background: #F8F9FB;
+}
+
+.options .option:hover{
+    background: #F9B023;
+}
+
+.options .option img{
+    width: 25px;
+    margin-right: 8px;
+}
+
+option .option-text{
+    color: #333;
+}
+
+.wrapper .filter .date .from-date p,
+.wrapper .filter .date .to-date p{
+    color: #2A4BA0;
+    font-size: 17px;
+    font-weight: 550;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+.wrapper .filter .date .from-date input,
+.wrapper .filter .date .to-date input{
+    background-color: #F8F9FB;
+    border: 2px solid #2A4BA0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 550;
+}
+
+::-webkit-calendar-picker-indicator{
+    background-color: #F9B023;
+    padding: 5px;
+    border-radius: 5px;
+}
+/* -------style untuk filter------- */
+
+/* ----style untuk list history---- */
+.history-list{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.history-card{
+    display: flex;
+    margin: 20px 0;
+    background-color: #F8F9FB;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.history-day{
+    margin-bottom: 30px;
+    margin-right: 50px;
+
+}
+
+.history-day p{
+    color: #2A4BA0;
+    font-size: 17px;
+    font-family: Manrope;
+    font-weight: 600;
+}
+
+.history-card img{
+    border-radius: 10px;
+    /* border: 2px solid #2A4BA0; */
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    width: 100px; /* Pastikan lebar 100% agar objek-fit berfungsi dengan baik */
+    height: 100px; /* Pastikan tinggi 100% agar objek-fit berfungsi dengan baik */
+}
+
+.history-desc{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.history-desc .fruit-name{
+    color: #1E222B;
+    font-size: 17px;
+    font-family: Manrope;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.history-desc .fruit-status{
+    color: #FFC83A;
+    font-size: 20px;
+    font-family: Manrope;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.history-desc .fruit-time{
+    color: rgba(30, 34, 43, 0.58);
+    font-size: 13px;
+    font-family: Manrope;
+    font-weight: 600;
+}
+/* ----style untuk list history---- */
+
+/* ------style main content-------- */
+
+/* ----------responsive------------ */
+@media (max-width: 1048px){
+    .logo{
+        width: 75px;
+        height: auto;
+        margin-left: 30px;
+    }
+
+    nav ul{
+        margin-right: 20px;
+    }
+
+
+    .logo-title{
+        font-family: 'Expletus Sans', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 45%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
+    }
+}
+
+
+@media (max-width: 840px){
+    body{
+        z-index: 1;
+    }
+
+    .logo-title{
+        font-family: 'Expletus Sans', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
+    }
+    
+    nav #icon-menu{
+        display: block;
+    }
+
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #153075;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: .5s;
+        z-index: 4;
+    }
+
+    nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    
+    a.active,a:hover{
+        border: none;
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    i.active,i:hover{
+        color: #F9B023;
+        transition: 0.5s;
+    }
+
+    nav ul.show{
+        left: 0;
+    }
+    
+}
+
+@media(max-width: 650px){
+    .logo-title{
+        font-family: 'Expletus Sans', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 35%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
+    }
+}
+
+@media(max-width: 600px){
+    .filter{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        white-space: nowrap;
+        margin-left: 20px;
+    }
+
+    .category{
+        width: 180px;
+        /* margin: 150px auto; */
+        margin-bottom: 20px;
+        white-space: normal;
+    }
+}
+
+@media(max-width: 500px){
+    .logo-title{
+        font-family: 'Expletus Sans', sans-serif;
+        font-weight: bold;
+        font-size: 30px;
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
+        align-items: center;
+        position: absolute;
+        left: 38%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
+    }
+}
+
