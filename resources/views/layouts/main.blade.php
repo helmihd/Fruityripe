@@ -16,4 +16,9 @@
         @yield('content')
     </body>
     @yield('script')
+    <script>
+        function redirectToProfile() {
+            window.location.href = '/profile';
+        }
+    </script>
 </html>
