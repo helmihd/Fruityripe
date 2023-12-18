@@ -73,7 +73,7 @@
         </form>
         <section class="progress-area"></section>
         <section class="uploaded-area"></section>
-        <button type="button" id="externalButton" class="externalButton">Go!</button>
+        <button type="button" id="externalButton" class="externalButton">Identify Now</button>
     </div>
     <button type="button" onclick="uploadImage()">Unggah Gambar</button>
     <ul id="imageList"></ul>
