@@ -1,40 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope&display=swap">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./assets/Profile.css">
+@extends('layouts.main')
+
+@section('head')
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
     <title>adelinefellita</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon-menu').click(function(){
-                $('ul').toggleClass('show');
-            });
-        });
-    </script>
-</head>
-<body>
-    <nav>
-        <div class="logo">
-            <img src="{{ asset('images/fruitytipe-logo.png') }}" alt="">
-        </div>
-        <label class="logo-title">FruityRipe</label>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Login</a></li>
-            <li><i class="fas fa-user"></i></li>
-        </ul>
-        <label class="icon-menu" id="icon-menu">
-            <i class="fas fa-bars"></i>
-        </label>
-    </nav>
+@endsection
+
+@section('content')
     <div class="wrapper" id="profile-card">
         <div class="left">
             <input type="file" id="profileImageInput" style="display: none;">
@@ -66,25 +37,36 @@
                 </div>
                 <div class="data" id="display-data">
                     <h4>Firstname</h4>
-                    <p>Adeline</p>
+                    <p>{{ $user['firstname'] }}</p>
                 </div>
                 <div class="data" id="lastname-data">
                     <h4>Lastname</h4>
-                    <p>Fellita</p>
+                    <p>{{ $user['lastname'] }}</p>
                 </div>
                 <div class="data">
                     <h4>Email</h4>
-                    <p>adelinefellita@gmail.com</p>
+                    <p>{{ $user['email'] }}</p>
                 </div>
                 <div class="data">
                     <h4>Username</h4>
-                    <p>adelinefellita</p>
+                    <p>{{ session('username') }}</p>
                 </div>
                 <button class="edit-button" id="editable-username" onclick="toggleEditForm()"><i class="fa-regular fa-pen-to-square"></i>Edit profile</button>
             </div>
         </div>
     </div>
-    
+@endsection
+
+@section('script')
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#icon-menu').click(function(){
+                $('ul').toggleClass('show');
+            });
+        });
+    </script>
+
     <script>
         function toggleEditForm() {
             const editForm = document.getElementById('edit-form');
@@ -140,7 +122,7 @@
             // Switch back to display mode
             toggleEditForm();
         });
-    
+
         function cancelEdit() {
             // Switch back to display mode without saving changes
             toggleEditForm();
@@ -163,11 +145,5 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        
-    
-    
     </script>
-    
-    
-</body>
-</html>
+@endsection
