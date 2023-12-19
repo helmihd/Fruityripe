@@ -34,17 +34,24 @@ nav{
 }
 
 .logo-title{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Expletus Sans', sans-serif;
     font-weight: bold;
     font-size: 30px;
-    background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-    -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-    display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+    /* background: w;
+    -webkit-background-clip: text; Menerapkan background hanya pada teks */
+    color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+    /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
     align-items: center;
     position: absolute;
     left: 45%;
+    letter-spacing: 1.5px;
     
+}
+
+.logo-title span{
+    color: #F9B023;
+    font-weight: bold;
+    font-family: 'Expletus Sans', sans-serif;
 }
 
 nav ul{
@@ -240,16 +247,24 @@ nav i{
     }
 
     .logo-title{
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Expletus Sans', sans-serif;
         font-weight: bold;
         font-size: 30px;
-        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
         align-items: center;
         position: absolute;
         left: 45%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
     }
 }
 
@@ -260,14 +275,22 @@ nav i{
     }
 
     .logo-title{
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Expletus Sans', sans-serif;
         font-weight: bold;
         font-size: 30px;
-        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
         align-items: center;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
     }
     
     nav #icon-menu{
@@ -311,16 +334,24 @@ nav i{
 
 @media(max-width: 600px){
     .logo-title{
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Expletus Sans', sans-serif;
         font-weight: bold;
         font-size: 30px;
-        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
         align-items: center;
         position: absolute;
         left: 35%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
     }
 
     .wrapper{
@@ -336,16 +367,24 @@ nav i{
 
 @media(max-width: 500px){
     .logo-title{
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Expletus Sans', sans-serif;
         font-weight: bold;
         font-size: 30px;
-        background: linear-gradient(to right, red, orange); /* Gradient dari merah ke orange */
-        -webkit-background-clip: text; /* Menerapkan background hanya pada teks */
-        color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
-        display: inline-block; /* Mengatasi masalah dengan background-clip di beberapa browser */
+        /* background: w;
+        -webkit-background-clip: text; Menerapkan background hanya pada teks */
+        color: white; /* Membuat teks menjadi transparan agar gradient terlihat */
+        /* display: inline-block; Mengatasi masalah dengan background-clip di beberapa browser */
         align-items: center;
         position: absolute;
         left: 38%;
+        letter-spacing: 1.5px;
+        
+    }
+    
+    .logo-title span{
+        color: #F9B023;
+        font-weight: bold;
+        font-family: 'Expletus Sans', sans-serif;
     }
 
     .wrapper{
