@@ -17,6 +17,13 @@
     </body>
     @yield('script')
     <script>
+        $(document).ready(function(){
+            $('#icon-menu').click(function(){
+                $('ul').toggleClass('show');
+            });
+        });
+    </script>
+    <script>
         function redirectToProfile() {
             window.location.href = '/profile';
         }

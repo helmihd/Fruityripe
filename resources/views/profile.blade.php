@@ -59,13 +59,6 @@
 
 @section('script')
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon-menu').click(function(){
-                $('ul').toggleClass('show');
-            });
-        });
-    </script>
 
     <script>
         function toggleEditForm() {
