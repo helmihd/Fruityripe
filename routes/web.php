@@ -6,6 +6,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\MachineLearningController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +37,4 @@ Route::view('/dashboard', 'dashboard')->name('dashboard');
 Route::post('/upload-image', [ImageController::class, 'uploadImage']);
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+

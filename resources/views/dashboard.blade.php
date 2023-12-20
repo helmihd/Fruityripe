@@ -82,13 +82,6 @@
 @section('script')
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#icon-menu').click(function(){
-                $('ul').toggleClass('show');
-            });
-        });
-    </script>
     <script src="{{ asset('js/uploadImage.js') }}"></script>
     <script src="{{ asset('js/landingPage.js') }}"></script>
 @endsection
