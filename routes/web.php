@@ -37,4 +37,9 @@ Route::view('/dashboard', 'dashboard')->name('dashboard');
 Route::post('/upload-image', [ImageController::class, 'uploadImage']);
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
+Route::get('/history', [HistoryController::class, 'index'])->name('history');
+
+Route::get('/predict', [MachineLearningController::class, 'showForm']);
+Route::post('/predict', [MachineLearningController::class, 'predictFromForm']);
