@@ -1,6 +1,6 @@
-FROM php:8.1
+FROM php:8.2-fpm-alpine
 
-RUN apk add --no-cache nginx wget
+RUN apk add --no-cache nginx wget git openssl
 
 RUN mkdir -p /run/nginx
 
