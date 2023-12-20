@@ -19,14 +19,15 @@
             <div class="info">
                 <h3>Information</h3>
                 <div class="info-data" id="edit-form" style="display: none;">
-                    <form id="profile-form">
+                    <form id="profile-form" action="{{ route('profile.update') }}" method="POST">
+                        @csrf
                         <div class="data">
                             <h4>Firstname</h4>
-                            <input type="text" id="firstname" value="Adeline">
+                            <input type="text" id="firstname" value="{{ $user['firstname'] }}">
                         </div>
                         <div class="data">
                             <h4>Lastname</h4>
-                            <input type="text" id="lastname" value="Fellita">
+                            <input type="text" id="lastname" value="{{ $user['lastname'] }}">
                         </div>
                         <!-- Tambahkan ID pada tombol Save dan tombol Cancel -->
                         <div class="button-save-cancel">
@@ -108,19 +109,45 @@
         document.getElementById('profile-form').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent form submission
 
-            // Update the display with the new values
+            // Mengambil nilai dari input
             const firstnameInput = document.getElementById('firstname');
             const lastnameInput = document.getElementById('lastname');
-            const displayData = document.getElementById('display-data');
-            const lastnameData = document.getElementById('lastname-data');
-            const editableUsername = document.getElementById('editable-username');
 
-            displayData.innerHTML = '<h4>Firstname</h4><p>' + firstnameInput.value + '</p>';
-            lastnameData.innerHTML = '<h4>Lastname</h4><p>' + lastnameInput.value + '</p>';
-            //editableUsername.innerText = firstnameInput.value + ' ' + lastnameInput.value;
+            // Mengambil username dari sesi
+            const username = '{{ session('username') }}';
 
-            // Switch back to display mode
-            toggleEditForm();
+            // Mengirim data ke server (ProfileController) menggunakan AJAX
+            fetch('{{ route('profile.update') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+                cache: 'no-cache',
+                body: JSON.stringify({
+                    username: username,
+                    firstname: firstnameInput.value,
+                    lastname: lastnameInput.value,
+                    // Anda bisa menambahkan field lain yang perlu diperbarui
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update tampilan dengan nilai baru
+                const displayData = document.getElementById('display-data');
+                const lastnameData = document.getElementById('lastname-data');
+                displayData.innerHTML = '<h4>Firstname</h4><p>' + data.firstname + '</p>';
+                lastnameData.innerHTML = '<h4>Lastname</h4><p>' + data.lastname + '</p>';
+
+                // Switch back to display mode
+                toggleEditForm();
+
+                // Redirect ke halaman profil
+                window.location.href = '/profile';
+            })
+            .catch(error => {
+                console.error('Gagal memperbarui data profil:', error);
+            });
         });
 
         function cancelEdit() {

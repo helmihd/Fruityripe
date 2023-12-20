@@ -14,4 +14,23 @@ class ProfileController extends Controller
 
         return view('/profile', ['user' => $user]);
     }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            // Tambahkan aturan validasi lainnya sesuai kebutuhan
+        ]);
+        
+        $username = session('username');
+        $userRef = Firebase::database()->getReference('users/' . $username);
+
+        $userRef->update([
+            'firstname' => $request->input('firstname'),
+            'lastname' => $request->input('lastname'),
+        ]);
+
+        return redirect()->route('profile');
+    }
 }
