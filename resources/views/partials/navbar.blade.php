@@ -4,7 +4,7 @@
     </div>
     <label class="logo-title">FruityRipe</label>
     <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="{{ route('about') }}">About</a></li>
         <li><a href="{{ route('history') }}">History</a></li>
         @if(session('username'))
             <li><a href="{{ route('logout') }}">Logout</a></li>
