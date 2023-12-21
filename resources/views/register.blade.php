@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/register.css">
     <title>Sign up to FruityRipe</title>
 @endsection
 

@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/profile.css">
     <title>adelinefellita</title>
 @endsection
 

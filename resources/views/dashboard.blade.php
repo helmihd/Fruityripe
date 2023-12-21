@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/home.css">
     <title>Dashboard</title>
 @endsection
 
@@ -82,6 +82,6 @@
 @section('script')
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="{{ asset('js/uploadImage.js') }}"></script>
-    <script src="{{ asset('js/landingPage.js') }}"></script>
+    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/uploadImage.js"></script>
+    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/landingPage.js"></script>
 @endsection

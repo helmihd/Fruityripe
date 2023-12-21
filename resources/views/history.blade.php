@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-    <link rel="stylesheet" href="{{ asset('css/history.css') }}">
+    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/history.css">
     <title>History - {{ session('username') }}</title>
 @endsection
 
@@ -19,19 +19,19 @@
                 </div>
                 <ul class="options">
                     <li class="option">
-                        <img src="./assets/images/Banana.png" alt="">
+                        <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/banana.png" alt="">
                         <span class="option-text">Banana</span>
                     </li>
                     <li class="option">
-                        <img src="./assets/images/Apple.png" alt="">
+                        <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/apple-usa.png" alt="">
                         <span class="option-text">Apple</span>
                     </li>
                     <li class="option">
-                        <img src="./assets/images/Mango.png" alt="">
+                        <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/avocado.png" alt="">
                         <span class="option-text">Mango</span>
                     </li>
                     <li class="option">
-                        <img src="./assets/images/Papaya.png" alt="">
+                        <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/papaya.png" alt="">
                         <span class="option-text">Papaya</span>
                     </li>
                 </ul>
@@ -47,11 +47,22 @@
                 </div>
             </div>
         </div>
+        <h1>Daftar Gambar</h1>
+
+        <ul>
+            @foreach ($pictures as $picture)
+                <li>
+                    <strong>Timestamp:</strong> {{ $picture['timestamp'] }}<br>
+                    <strong>Username:</strong> {{ $picture['username'] }}<br>
+                </li>
+                <br>
+            @endforeach
+        </ul>
         <div class="history-list">
             <div class="history-day">
                 <p>05 Dec 2023</p>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/apple-result.jpg" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -59,7 +70,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/pineapple.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -67,7 +78,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/watermelon.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -78,7 +89,7 @@
             <div class="history-day">
                 <p>04 Nov 2023</p>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/banana.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -86,7 +97,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/apple-usa.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -94,7 +105,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/avocado.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -105,7 +116,7 @@
             <div class="history-day">
                 <p>03 Oct 2023</p>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/papaya.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -113,7 +124,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/banana.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>
@@ -121,7 +132,7 @@
                     </div>
                 </div>
                 <div class="history-card">
-                    <img src="./assets/images/apple-result.jpg" alt="">
+                    <img src="https://storage.googleapis.com/frutyripe.appspot.com/public/images/strawberry.png" alt="">
                     <div class="history-desc">
                         <p class="fruit-name">Tomato</p>
                         <p class="fruit-status">Unripe</p>

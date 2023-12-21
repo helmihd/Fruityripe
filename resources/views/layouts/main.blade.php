@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="icon" href="{{ asset('images/fruityripe-logo.png') }}">
+        <link rel="icon" href="https://storage.googleapis.com/frutyripe.appspot.com/public/images/fruityripe-logo.png">
         @yield('head')
     </head>
     <body>

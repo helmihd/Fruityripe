@@ -23,10 +23,14 @@ function uploadImage() {
         const uniqueFileName = `${folderName}/${username}_${timestamp}`;
 
         const formData = new FormData();
-        formData.append('file', file, uniqueFileName);
+        formData.append('image', file, uniqueFileName);
+
+        const headers = new Headers();
+        headers.append('Content-Type', file.type);
 
         fetch(`https://storage.googleapis.com/upload/storage/v1/b/${bucketName}/o?uploadType=media&name=${uniqueFileName}&key=${apiKey}`, {
             method: 'POST',
+            headers: headers,
             body: formData,
         })
         .then(response => response.json())

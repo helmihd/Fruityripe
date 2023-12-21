@@ -24,30 +24,27 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        // Validasi input jika diperlukan
         $request->validate([
             'username' => 'required',
             'password' => 'required',
         ]);
 
-        // Ambil data pengguna dari Firebase
+        // Retrieve user data from Firebase
         $usernameOrEmail = $request->input('username');
         $password = $request->input('password');
 
-        // Lakukan verifikasi data pengguna di Firebase
+        // Verify user data in Firebase
         $userData = $this->authenticateUser($usernameOrEmail, $password);
 
         if ($userData && is_array($userData)) {
-            // Ambil username dari data pengguna
+            // Retrieve username from user data
             $username = $userData['username'];
 
-            // Simpan informasi pengguna di sesi
+            // Store user information in session
             $request->session()->put('username', $username);
 
-            // Pengguna berhasil login
            return redirect()->route('dashboard');
         } else {
-            // Gagal login
             return redirect('login')->with('error', 'Username or Password incorrect!');
         }
     }
@@ -95,9 +92,8 @@ class LoginController extends Controller
 
     private function findUserByEmail($userRef, $email)
     {
-        // Iterasi melalui setiap child pada tabel pengguna
         foreach ($userRef->getSnapshot()->getValue() as $username => $userData) {
-            // Periksa apakah email pada data pengguna sama dengan input email
+            // Check whether the email in the user data is the same as the input email
             if (isset($userData['email']) && $userData['email'] === $email) {
                 $userData['username'] = $username;
                 return $userData;
@@ -109,10 +105,9 @@ class LoginController extends Controller
 
     public function logout()
     {
-        // Hapus data sesi pengguna yang sedang login
+        // Delete the logged in user's session data
         Session::forget('username');
 
-        // Redirect ke halaman login atau halaman lain yang sesuai
         return redirect('/dashboard');
     }
 }

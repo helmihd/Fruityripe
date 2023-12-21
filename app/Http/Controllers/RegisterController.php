@@ -40,13 +40,13 @@ class RegisterController extends Controller
             'firstname' => $request->input('firstname'),
             'lastname' => $request->input('lastname'),
             'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')), // Menggunakan bcrypt untuk mengenkripsi password
+            'password' => Hash::make($request->input('password')),
         ];
 
         // Set the username as the key in the database
         $this->database
             ->getReference($this->tablename)
-            ->getChild($username) // Set the username as the key
+            ->getChild($username)
             ->set($postData);
 
         // Redirect to 'login' after successfully adding data
