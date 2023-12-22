@@ -9,8 +9,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\MachineLearningController;
 use App\Http\Controllers\AboutController;
-
-
+use App\Http\Controllers\ResultController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +46,4 @@ Route::get('/predict', [MachineLearningController::class, 'showForm']);
 Route::post('/predict', [MachineLearningController::class, 'predictFromForm']);
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/result', [ResultController::class, 'index'])->name('result');

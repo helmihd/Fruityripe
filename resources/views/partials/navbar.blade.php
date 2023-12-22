@@ -4,6 +4,7 @@
     </div>
     <label class="logo-title">Fruity<span>Ripe</span></label>
     <ul>
+        <li><a href="{{ route('dashboard') }}">Home</a></li>
         <li><a href="{{ route('about') }}">About</a></li>
         <li><a href="{{ route('history') }}">History</a></li>
         @if(session('username'))
@@ -16,6 +17,5 @@
     </ul>
     <label class="icon-menu" id="icon-menu">
         <i class="fas fa-bars"></i>
-        <a href="{{ route('profile') }}"></a>
     </label>
 </nav>
