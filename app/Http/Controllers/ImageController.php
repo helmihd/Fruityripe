@@ -27,7 +27,7 @@ class ImageController extends Controller
             $object = $bucket->upload(
                 file_get_contents($file->path()),
                 [
-                    'name' => 'pictures/' .  $username . '/' . $key,
+                    'name' => 'pictures/' .  $username . '/' . $key . '.png',
                 ]
             );
 
@@ -40,7 +40,7 @@ class ImageController extends Controller
                 'username' => $username,
                 'timestamp' => $timestamp,
             ]);
-            return redirect('/dashboard')->with('status', 'Image uploaded successfully');
+            return redirect('/result')->with('status', 'Image uploaded successfully');
         } catch (\Exception $e) {
             return redirect('/dashboard')->with('status', 'Failed to upload image')->with('status_type', 'error');
         }

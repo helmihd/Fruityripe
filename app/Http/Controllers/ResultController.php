@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HistoryController extends Controller
+class ResultController extends Controller
 {
     public function index()
     {
-        return view('history');
+        return view('/result');
     }
 }

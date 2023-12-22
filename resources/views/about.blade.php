@@ -20,9 +20,18 @@
                 </p>
                 <div class="btn">
                     <button type="button">Our Team</button>
-                    <button type="button" class="btn2">Upload Now</button>
+                    <button type="button" class="btn2" id="uploadButton">Upload Now</button>
                 </div>
             </div>
         </div>
     </section>
+@endsection
+
+
+@section('script')
+    <script>
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            window.location.href = "{{ route('dashboard') }}";
+        });
+    </script>
 @endsection

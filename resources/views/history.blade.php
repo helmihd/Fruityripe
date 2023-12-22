@@ -47,17 +47,6 @@
                 </div>
             </div>
         </div>
-        <h1>Daftar Gambar</h1>
-
-        <ul>
-            @foreach ($pictures as $picture)
-                <li>
-                    <strong>Timestamp:</strong> {{ $picture['timestamp'] }}<br>
-                    <strong>Username:</strong> {{ $picture['username'] }}<br>
-                </li>
-                <br>
-            @endforeach
-        </ul>
         <div class="history-list">
             <div class="history-day">
                 <p>05 Dec 2023</p>
