@@ -30,7 +30,7 @@ class ImageController extends Controller
                     'name' => 'pictures/' .  $username . '/' . $key . '.png',
                 ]
             );
-
+                        
             $databaseUrl = 'https://frutyripe-default-rtdb.firebaseio.com';
             $database = $factory->withDatabaseUri($databaseUrl)->createDatabase();
 
