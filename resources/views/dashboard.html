@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope&display=swap">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="icon" href="https://storage.googleapis.com/frutyripe.appspot.com/public/images/fruityripe-logo.png">
+            <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/home.css">
+    <title>Dashboard</title>
+    </head>
+    <body>
+        <nav>
+    <div class="logo">
+        <img src="http://127.0.0.1:8000/images/fruityripe-logo.png" alt="">
+    </div>
+    <label class="logo-title">Fruity<span>Ripe</span></label>
+    <ul>
+        <li><a href="http://127.0.0.1:8000/about">About</a></li>
+        <li><a href="http://127.0.0.1:8000/history">History</a></li>
+                    <li><a href="http://127.0.0.1:8000/login">Login</a></li>
+            <li><a href="http://127.0.0.1:8000/login" class="fas fa-user"></a></li>
+            </ul>
+    <label class="icon-menu" id="icon-menu">
+        <i class="fas fa-bars"></i>
+        <a href="http://127.0.0.1:8000/profile"></a>
+    </label>
+</nav>            <div class="big-title">
+        <p>Check Your Fruit</p>
+    </div>
+    <div class="medium-title">
+                    <p>You can choose the variety of fruit available.</p>
+            </div>
+    <div class="gallery">
+        <div class="content-banana">
+            <div class="circle-banana"></div>
+            <img src="http://127.0.0.1:8000/images/banana.png" alt="">
+            <p>Banana</p>
+        </div>
+        <div class="content-apple">
+            <div class="circle-apple"></div>
+            <img src="http://127.0.0.1:8000/images/apple-usa.png" alt="">
+            <p>Apple</p>
+        </div>
+        <div class="content-mango">
+            <div class="circle-mango"></div>
+            <img src="http://127.0.0.1:8000/images/mango.png" alt="">
+            <p>Mango</p>
+        </div>
+        <div class="content-papaya">
+            <div class="circle-papaya"></div>
+            <img src="http://127.0.0.1:8000/images/papaya.png" alt="">
+            <p>Papaya</p>
+        </div>
+        <div class="content-avocado">
+            <div class="circle-avocado"></div>
+            <img src="http://127.0.0.1:8000/images/avocado.png" alt="">
+            <p>Avocado</p>
+        </div>
+        <div class="content-pineapple">
+            <div class="circle-pineapple"></div>
+            <img src="http://127.0.0.1:8000/images/pineapple.png" alt="">
+            <p>Pineapple</p>
+        </div>
+        <div class="content-strawberry">
+            <div class="circle-strawberry"></div>
+            <img src="http://127.0.0.1:8000/images/strawberry.png" alt="">
+            <p>Strawberry</p>
+        </div>
+        <div class="content-watermelon">
+            <div class="circle-watermelon"></div>
+            <img src="http://127.0.0.1:8000/images/watermelon.png" alt="">
+            <p>Watermelon</p>
+        </div>
+    </div>
+    
+    
+    <div class="wrapper">
+        <header>Upload your file here!</header>
+        <form action="http://127.0.0.1:8000/upload-image" id="uploadForm" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_token" value="M3YzvEfnVPCkiIkxBEyFbvpZFNLO7IRouF0ynCEp" autocomplete="off">            <input type="file" class="file-input" name="fileInput" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Browse File to Upload</p>
+        </form>
+        <section class="progress-area"></section>
+        <section class="uploaded-area"></section>
+        <button type="button" id="externalButton" class="externalButton">Identify Now</button>
+    </div>
+    <button type="button" onclick="uploadImage()">Unggah Gambar</button>
+    <ul id="imageList"></ul>
+    </body>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/uploadImage.js"></script>
+    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/landingPage.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#icon-menu').click(function(){
+                $('ul').toggleClass('show');
+            });
+        });
+    </script>
+    <script>
+        function redirectToProfile() {
+            window.location.href = '/profile';
+        }
+    </script>
+</html>
