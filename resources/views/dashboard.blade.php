@@ -80,6 +80,4 @@
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/uploadImage.js"></script>
-    <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/landingPage.js"></script>
 @endsection
