@@ -2,7 +2,7 @@
     <div class="logo">
         <img src="{{ asset('images/fruityripe-logo.png') }}" alt="">
     </div>
-    <label class="logo-title">Frut<span>Ripe</span></label>
+    <label class="logo-title">Fruit<span>Ripe</span></label>
     <ul>
         <li><a href="{{ route('dashboard') }}">Home</a></li>
         <li><a href="{{ route('about') }}">About</a></li>
