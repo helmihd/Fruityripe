@@ -40,7 +40,7 @@
         <div class="content-snakefruit">
             <div class="circle-snakefruit"></div>
             <img src="{{ asset('images/snakefruit.png') }}" alt="">
-            <p>SnakeFruit</p>
+            <p>Salak</p>
         </div>
         <div class="content-pineapple">
             <div class="circle-pineapple"></div>
