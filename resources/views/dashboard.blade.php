@@ -68,11 +68,16 @@
         </form>
         <section class="progress-area"></section>
         <section class="uploaded-area"></section>
-        <button type="button" id="externalButton" class="externalButton">Identify Now</button>
+        <button type="button" id="externalButton" class="externalButton" onclick="redirectToExternalURL()">Identify Now</button>
     </div>
 @endsection
 
 @section('script')
+    <script>
+        function redirectToExternalURL() {
+            window.location.href = 'http://34.122.212.64:5000/';
+        }
+    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://storage.googleapis.com/frutyripe.appspot.com/public/js/uploadImage.js"></script>
