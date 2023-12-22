@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/about.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/frutyripe.appspot.com/public/css/about2.css">
     <title>About Us</title>
 @endsection
 
